@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZeroTheory Dashboard</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #020617);
+    color: #e5e7eb;
+  }
+
+  header {
+    text-align: center;
+    padding: 50px 20px;
+  }
+
+  .cards {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    width: 260px;
+    padding: 25px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.08);
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .card:hover {
+    transform: translateY(-8px);
+  }
+
+  .icon {
+    font-size: 40px;
+  }
+
+  /* MODAL */
+  .modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal-content {
+    background: #020617;
+    padding: 30px;
+    border-radius: 18px;
+    width: 90%;
+    max-width: 500px;
+    animation: pop 0.3s ease;
+  }
+
+  @keyframes pop {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+
+  .close {
+    float: right;
+    cursor: pointer;
+    font-size: 20px;
+    color: #9ca3af;
+  }
+
+  footer {
+    text-align: center;
+    padding: 20px;
+    color: #9ca3af;
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>ZeroTheory 🚀</h1>
+  <p>Build. Ship. Level Up.</p>
+</header>
+
+<section class="cards">
+  <div class="card" onclick="openModal('learn')">
+    <div class="icon">🧠</div>
+    <h3>Learn</h3>
+  </div>
+
+  <div class="card" onclick="openModal('build')">
+    <div class="icon">⚙️</div>
+    <h3>Build</h3>
+  </div>
+
+  <div class="card" onclick="openModal('community')">
+    <div class="icon">🌍</div>
+    <h3>Community</h3>
+  </div>
+</section>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">✖</span>
+    <div id="modalData"></div>
+  </div>
+</div>
+
+<footer>
+  Day 3 · ZeroTheory Web Design Challenge
+</footer>
+
+<script>
+  function openModal(type) {
+    const modal = document.getElementById("modal");
+    const data = document.getElementById("modalData");
+
+    modal.style.display = "flex";
+
+    if (type === "learn") {
+      data.innerHTML = `
+        <h2>🧠 Learn at ZeroTheory</h2>
+        <ul>
+          <li>Daily coding challenges</li>
+          <li>Concept-driven learning paths</li>
+          <li>From beginner to advanced</li>
+        </ul>
+      `;
+    }
+
+    if (type === "build") {
+      data.innerHTML = `
+        <h2>⚙️ Build Real Projects</h2>
+        <ul>
+          <li>Mini apps & UI components</li>
+          <li>Portfolio-ready projects</li>
+          <li>Hands-on development</li>
+        </ul>
+      `;
+    }
+
+    if (type === "community") {
+      data.innerHTML = `
+        <h2>🌍 Community</h2>
+        <ul>
+          <li>Share progress & feedback</li>
+          <li>Learn together</li>
+          <li>Grow as a team</li>
+        </ul>
+      `;
+    }
+  }
+
+  function closeModal() {
+    document.getElementById("modal").style.display = "none";
+  }
+</script>
+
+</body>
+</html> 
