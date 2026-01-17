@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZeroTheory | From Zero to Hero</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #ffffff;
+      min-height: 100vh;
+      transition: background 0.5s, color 0.5s;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 700;
+      color: #00ffd5;
+    }
+
+    nav a {
+      color: #fff;
+      margin-left: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00ffd5;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .hero h1 {
+      font-size: 52px;
+      margin-bottom: 20px;
+    }
+
+    .hero span {
+      color: #00ffd5;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 650px;
+      margin-bottom: 40px;
+      opacity: 0.9;
+    }
+
+    .btn {
+      padding: 14px 32px;
+      border: none;
+      border-radius: 30px;
+      background: #00ffd5;
+      color: #000;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0, 255, 213, 0.4);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      padding: 60px 50px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 30px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .card h3 {
+      margin-bottom: 15px;
+      color: #00ffd5;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+      opacity: 0.7;
+    }
+
+    /* Dark / Light Mode */
+    .light {
+      background: #f5f5f5;
+      color: #111;
+    }
+
+    .light nav a {
+      color: #111;
+    }
+
+    .light .card {
+      background: #ffffff;
+      color: #111;
+    }
+
+    .toggle {
+      cursor: pointer;
+      font-size: 14px;
+      border: 1px solid #00ffd5;
+      padding: 6px 14px;
+      border-radius: 20px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">ZeroTheory</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Community</a>
+      <a href="#">Challenges</a>
+      <a href="#">About</a>
+      <span class="toggle" onclick="toggleTheme()">🌙 Toggle</span>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>From <span>Zero</span> to <span>Hero</span></h1>
+    <p>
+      ZeroTheory is a learning movement where beginners turn into creators.
+      Code. Build. Grow. Together.
+    </p>
+    <button class="btn" onclick="joinNow()">Join the Journey</button>
+  </section>
+
+  <section class="cards">
+    <div class="card">
+      <h3>🚀 Learn by Doing</h3>
+      <p>Daily challenges that push you to build real skills, not just theory.</p>
+    </div>
+    <div class="card">
+      <h3>🤝 Community Power</h3>
+      <p>Grow with like-minded learners, share progress, and support each other.</p>
+    </div>
+    <div class="card">
+      <h3>🔥 Zero to Heroes</h3>
+      <p>Beginner-friendly path designed for students and self-learners.</p>
+    </div>
+  </section>
+
+  <!-- Progress Section -->
+  <section class="hero" style="padding:40px 20px;">
+    <h2>Your Zero → Hero Progress</h2>
+    <p>Consistency builds champions. Track your growth.</p>
+    <div style="width:60%; background:#ffffff22; border-radius:20px; overflow:hidden; margin-top:20px;">
+      <div id="progressBar" style="width:30%; background:#00ffd5; padding:12px; text-align:center; color:#000; font-weight:600;">30%</div>
+    </div>
+    <br>
+    <button class="btn" onclick="increaseProgress()">Complete Today’s Challenge</button>
+  </section>
+
+  <footer>
+    © 2026 ZeroTheory • Built with 💙 by a Zero to Hero
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('light');
+    }
+
+    function joinNow() {
+      alert("Welcome to ZeroTheory! Your journey from Zero to Hero begins now 🚀");
+    }
+
+    let progress = 30;
+    function increaseProgress() {
+      if(progress < 100) {
+        progress += 10;
+        document.getElementById('progressBar').style.width = progress + '%';
+        document.getElementById('progressBar').innerText = progress + '%';
+      } else {
+        alert('You are officially a ZeroTheory Hero 🔥');
+      }
+    }
+
+    function toggleTheme() {() {
+      alert("Welcome to ZeroTheory! Your journey from Zero to Hero begins now 🚀");
+    }
+  </script>
+
+</body>
+</html>
