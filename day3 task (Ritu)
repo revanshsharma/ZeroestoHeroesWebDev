@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ZeroTheory</title>
+
+  <!-- CSS connect -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>ZeroTheory</h1>
+    <button id="themeBtn">🌙 Toggle Theme</button>
+  </header>
+
+  <main>
+    <p id="message">Welcome! Click the button below 👇</p>
+    <button id="actionBtn">Start Journey</button>
+  </main>
+
+  <!-- JS connect -->
+  <script src="script.js"></script>
+</body>
+</html>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  color: #111;
+  text-align: center;
+}
+
+header {
+  background-color: #222;
+  color: white;
+  padding: 15px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#actionBtn {
+  background-color: #00c896;
+  color: black;
+  font-size: 16px;
+}
+
+#themeBtn {
+  background-color: #444;
+  color: white;
+}
+
+/* Dark mode */
+.dark {
+  background-color: #111;
+  color: white;
+}
+
+.dark header {
+  background-color: #000;
+}
+// Elements pakad liye
+const actionBtn = document.getElementById("actionBtn");
+const themeBtn = document.getElementById("themeBtn");
+const message = document.getElementById("message");
+
+// Button click action
+actionBtn.addEventListener("click", function () {
+  message.innerText = "You have started your Zero → Hero journey 🚀";
+});
+
+// Theme toggle
+themeBtn.addEventListener("click", function () {
+  document.body.classList.toggle("dark");
+});
