@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Zeroes to Heroes | Day 3</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(160deg, #1a0f0a, #090503);
+      color: #fff3e6;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 22px 60px;
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav h1 {
+      color: #f97316;
+      font-size: 22px;
+    }
+
+    .nav span {
+      font-size: 14px;
+      opacity: 0.7;
+    }
+
+    .container {
+      padding: 90px 60px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .left h2 {
+      font-size: 46px;
+      margin-bottom: 20px;
+      color: #fb923c;
+    }
+
+    .left p {
+      opacity: 0.85;
+      line-height: 1.7;
+      margin-bottom: 35px;
+    }
+
+    .progress-box {
+      margin-bottom: 35px;
+    }
+
+    .progress-head {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      margin-bottom: 8px;
+      opacity: 0.8;
+    }
+
+    .progress {
+      height: 10px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #f97316, #fbbf24);
+    }
+
+    .actions {
+      display: flex;
+      gap: 16px;
+    }
+
+    .btn {
+      padding: 12px 30px;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .primary {
+      background: linear-gradient(135deg, #f97316, #fbbf24);
+      color: #1a0f0a;
+    }
+
+    .outline {
+      background: transparent;
+      border: 1px solid #f97316;
+      color: #f97316;
+    }
+
+    .right {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .tile {
+      padding: 30px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 18px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .tile:hover {
+      transform: translateY(-8px);
+      background: rgba(249,115,22,0.18);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      opacity: 0.6;
+    }
+
+    @media (max-width: 900px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="nav">
+  <h1>ZeroTheory</h1>
+  <span>Day 3 • Web Design</span>
+</div>
+
+<div class="container">
+  <div class="left">
+    <h2>Design. Practice. Improve.</h2>
+    <p>
+      Day 3 of the Zeroes to Heroes challenge focused on experimenting with
+      layouts, color systems, and basic interactivity using HTML, CSS, and JavaScript.
+    </p>
+
+    <div class="progress-box">
+      <div class="progress-head">
+        <span>Challenge Progress</span>
+        <span>3 / 10 Days</span>
+      </div>
+      <div class="progress">
+        <div class="fill"></div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn primary">Start Learning</button>
+      <button class="btn outline">Community</button>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="tile">Layout Practice</div>
+    <div class="tile">Color Theory</div>
+    <div class="tile">Clean UI</div>
+    <div class="tile">Consistency</div>
+  </div>
+</div>
+
+<footer>
+  Zeroes to Heroes • Day 3 Submission
+</footer>
+
+<script>
+  const bar = document.querySelector(".fill")
+  let width = 0
+
+  const animate = setInterval(() => {
+    if (width >= 30) {
+      clearInterval(animate)
+    } else {
+      width++
+      bar.style.width = width + "%"
+    }
+  }, 18)
+</script>
+
+</body>
+</html>
