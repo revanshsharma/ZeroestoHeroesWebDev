@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Zeroes to Heroes | Day 3</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(160deg, #081c24, #020a10);
+      color: #e8faff;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 60px;
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(10px);
+    }
+
+    header h1 {
+      color: #22d3ee;
+      font-size: 22px;
+    }
+
+    header span {
+      opacity: 0.7;
+      font-size: 14px;
+    }
+
+    .hero {
+      padding: 100px 60px;
+      max-width: 750px;
+    }
+
+    .hero h2 {
+      font-size: 48px;
+      color: #67e8f9;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      opacity: 0.85;
+      line-height: 1.6;
+      margin-bottom: 35px;
+    }
+
+    .progress-box {
+      margin-bottom: 35px;
+    }
+
+    .progress-top {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      margin-bottom: 6px;
+      opacity: 0.8;
+    }
+
+    .progress-bar {
+      height: 8px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #22d3ee, #2dd4bf);
+    }
+
+    .buttons {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 60px;
+    }
+
+    .btn {
+      padding: 12px 30px;
+      border-radius: 25px;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .primary {
+      background: linear-gradient(135deg, #22d3ee, #2dd4bf);
+      color: #022c2c;
+    }
+
+    .secondary {
+      background: transparent;
+      border: 1px solid #22d3ee;
+      color: #22d3ee;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 0 60px 60px;
+    }
+
+    .card {
+      padding: 30px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 18px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      background: rgba(34,211,238,0.15);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>ZeroTheory</h1>
+  <span>Day 3 • Web Design</span>
+</header>
+
+<section class="hero">
+  <h2>Build. Learn. Repeat.</h2>
+  <p>
+    Day 3 of the Zeroes to Heroes challenge focused on experimenting with
+    web design, layout structure, and visual consistency using core web technologies.
+  </p>
+
+  <div class="progress-box">
+    <div class="progress-top">
+      <span>Progress</span>
+      <span>3 / 10 Days</span>
+    </div>
+    <div class="progress-bar">
+      <div class="progress-fill"></div>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <button class="btn primary">Explore</button>
+    <button class="btn secondary">Community</button>
+  </div>
+</section>
+
+<section class="grid">
+  <div class="card">Clean UI</div>
+  <div class="card">New Color Palette</div>
+  <div class="card">Layout Practice</div>
+  <div class="card">Basic Interactivity</div>
+</section>
+
+<footer>
+  Zeroes to Heroes • Day 3 Submission
+</footer>
+
+<script>
+  const fill = document.querySelector(".progress-fill")
+  let value = 0
+
+  const timer = setInterval(() => {
+    if (value >= 30) {
+      clearInterval(timer)
+    } else {
+      value++
+      fill.style.width = value + "%"
+    }
+  }, 20)
+</script>
+
+</body>
+</html>
