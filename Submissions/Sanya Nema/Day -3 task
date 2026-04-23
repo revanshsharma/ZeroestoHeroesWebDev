@@ -1,0 +1,231 @@
+## html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ZeroTheory Community</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">ZeroTheory</div>
+        <a href="https://chat.whatsapp.com/GizlmYwizaNBAQxTvV942Z" target="_blank" class="join-btn">
+            Join Community 🚀
+        </a>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Start From Zero. Build Without Limits.</h1>
+            <p>
+                ZeroTheory is a creative tech community where beginners become
+                builders, learners become innovators, and ideas turn into reality.
+            </p>
+            <a href="https://chat.whatsapp.com/GizlmYwizaNBAQxTvV942Z" target="_blank" class="cta-btn">
+                Join the ZeroTheory Community
+            </a>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about">
+        <h2>Why ZeroTheory?</h2>
+
+        <div class="columns">
+            <div class="card">
+                <h3>👶 For Beginners</h3>
+                <p>
+                    Start from absolute zero. Learn programming, web development,
+                    AI and problem-solving in a simple and guided way.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🚀 For Innovators</h3>
+                <p>
+                    Turn ideas into real projects. Build startups, hackathon ideas,
+                    AI solutions and creative tech products.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>📚 For Learners</h3>
+                <p>
+                    Learn continuously through challenges, tasks, community support
+                    and real-world problem solving.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 ZeroTheory | Learn • Build • Innovate</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+## css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    background: #0f0f0f;
+}
+
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0,0,0,0.7);
+    z-index: 10;
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 26px;
+    color: #00f5ff;
+}
+
+.join-btn {
+    background: linear-gradient(45deg, #00f5ff, #00c3ff);
+    padding: 10px 20px;
+    color: black;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* HERO SECTION */
+.hero {
+    height: 100vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+        url("https://images.unsplash.com/photo-1518770660439-4636190af475");
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-content {
+    animation: fadeIn 1.5s ease;
+}
+
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 20px;
+    margin-bottom: 35px;
+    opacity: 0.9;
+}
+
+.cta-btn {
+    background: linear-gradient(45deg, #ff0080, #ff8c00);
+    padding: 15px 35px;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.cta-btn:hover {
+    transform: scale(1.1);
+}
+
+/* ABOUT SECTION */
+.about {
+    padding: 80px 20px;
+    background: #111;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.columns {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+/* CARDS */
+.card {
+    background: linear-gradient(135deg, #1f1f1f, #292929);
+    padding: 30px;
+    width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-12px);
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    color: #00f5ff;
+}
+
+/* FOOTER */
+footer {
+    background: black;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+## javascript
+console.log("Welcome to ZeroTheory 🚀");
